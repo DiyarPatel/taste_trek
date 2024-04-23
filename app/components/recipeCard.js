@@ -12,7 +12,7 @@ const RecipeCard = ({
       onClick={() => handleRecipeClick(recipe.idMeal)}
     >
       <div className="relative h-48">
-        <img
+        <Image
           src={recipe.strMealThumb}
           alt={recipe.strMeal}
           className="object-cover w-full h-full"

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useEffect } from "react";
 const RecipeDetails = ({ selectedRecipe, setSelectedRecipe }) => {
   const handleClose = () => {
@@ -29,7 +30,7 @@ const RecipeDetails = ({ selectedRecipe, setSelectedRecipe }) => {
               <h2 className="text-2xl font-bold">{selectedRecipe.strMeal}</h2>
               <button className="modal-close text-3xl" onClick={handleClose}>&times;</button>
             </div>
-            <img
+            <Image
               src={selectedRecipe.strMealThumb}
               alt={selectedRecipe.strMeal}
               className="w-full h-auto"

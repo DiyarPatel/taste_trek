@@ -1,6 +1,7 @@
 import Home from "./components/home";
 //import AboutPage from "./components/About";
 import Link from "next/link";
+import Image from "next/image";
 
 const Page = () => {
   return (
