@@ -27,27 +27,50 @@ const RecipeDetails = ({ selectedRecipe, setSelectedRecipe }) => {
   }, [selectedRecipe]);
 
   return (
-    <div className={`fixed inset-0 z-50 ${selectedRecipe ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-      <div className="modal-overlay bg-black opacity-10 absolute inset-0" onClick={handleClose}></div>
+    <div
+      className={`fixed inset-0 z-50 ${
+        selectedRecipe ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}
+    >
+      <div
+        className="modal-overlay bg-black opacity-10 absolute inset-0"
+        onClick={handleClose}
+      ></div>
       <div className="modal-container flex items-center justify-center h-full overflow-y-auto">
         {selectedRecipe && (
-          <div className="modal-content bg-white rounded-lg p-8 max-w-md w-full" onClick={handleContentClick}>
+          <div
+            className="modal-content bg-white rounded-lg p-8 max-w-md w-full"
+            onClick={handleContentClick}
+          >
             <div className="flex justify-between items-center pb-3">
               <h2 className="text-2xl font-bold">{selectedRecipe.strMeal}</h2>
-              <button className="modal-close text-3xl" onClick={handleClose}>&times;</button>
+              <button className="modal-close text-3xl" onClick={handleClose}>
+                &times;
+              </button>
             </div>
             <Image
               src={selectedRecipe.strMealThumb}
               alt={selectedRecipe.strMeal}
-              width={500} // Set the width according to your design requirements
-              height={300} // Set the height according to your design requirements
+              width={500}
+              height={300}
               className="w-full h-auto"
             />
-            <div className="py-2 overflow-y-auto max-h-60"> {/* Apply overflow-y-auto to enable scrolling */}
+            <div className="py-2 overflow-y-auto max-h-60">
               <p>{selectedRecipe.strInstructions}</p>
             </div>
             <div className="flex justify-center">
-              <button onClick={handleClose} className="modal-close-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              <button
+                onClick={handleClose}
+                className="modal-close-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                onMouseOver={(e) =>
+                  (e.currentTarget.style.boxShadow =
+                    "0 8px 12px rgba(25, 25, 112, 0.5)")
+                }
+                onMouseOut={(e) =>
+                  (e.currentTarget.style.boxShadow =
+                    "0 4px 6px rgba(0, 0, 0, 0.1)")
+                }
+              >
                 Close
               </button>
             </div>

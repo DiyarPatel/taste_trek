@@ -7,8 +7,7 @@ const RecipeCard = ({ recipe, handleRecipeClick }) => {
       onClick={() => handleRecipeClick(recipe.idMeal)}
       style={{ transition: "box-shadow 0.3s" }}
       onMouseOver={(e) =>
-        (e.currentTarget.style.boxShadow =
-          "0 8px 12px rgba(173, 216, 230, 0.5)")
+        (e.currentTarget.style.boxShadow = "0 8px 12px rgba(25, 25, 112, 0.5)")
       }
       onMouseOut={(e) =>
         (e.currentTarget.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)")

@@ -1,5 +1,4 @@
-"use client";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./header";
 import SearchBar from "./searchBar";
 import RecipeCard from "./recipeCard";
@@ -10,7 +9,6 @@ const Home = () => {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
-  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -22,7 +20,7 @@ const Home = () => {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        setRecipes(data.meals);
+        setRecipes(data.meals || []);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching recipes:", error);
@@ -51,21 +49,6 @@ const Home = () => {
     }
   };
 
-  const toggleFavorite = (recipeId) => {
-    const isFavorite = favorites.includes(recipeId);
-    if (isFavorite) {
-      // Remove from favorites
-      setFavorites(favorites.filter((id) => id !== recipeId));
-    } else {
-      // Add to favorites
-      setFavorites([...favorites, recipeId]);
-    }
-  };
-
-  const isFavorite = (recipeId) => {
-    return favorites.includes(recipeId);
-  };
-
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col">
       <Header />
@@ -74,14 +57,12 @@ const Home = () => {
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {loading ? (
             <p>Loading...</p>
-          ) : recipes ? (
+          ) : recipes.length ? (
             recipes.map((recipe) => (
               <RecipeCard
                 key={recipe.idMeal}
                 recipe={recipe}
                 handleRecipeClick={handleRecipeClick}
-                toggleFavorite={toggleFavorite}
-                isFavorite={isFavorite}
               />
             ))
           ) : (
@@ -89,16 +70,13 @@ const Home = () => {
           )}
         </section>
       </main>
-      <footer className="bg-gray-300 py-4 text-center">
+      <footer className="bg-white py-4 text-center">
         <div className="text-black">Contact Us: mistryAndPatel@gmail.com</div>
         <div className="text-black">
           &copy; 2024 Your Website Name. All rights reserved.
         </div>
       </footer>
-      <RecipeDetails
-        selectedRecipe={selectedRecipe}
-        setSelectedRecipe={setSelectedRecipe}
-      />
+      <RecipeDetails selectedRecipe={selectedRecipe} />
     </div>
   );
 };
