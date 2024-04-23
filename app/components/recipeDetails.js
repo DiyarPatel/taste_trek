@@ -30,12 +30,11 @@ const RecipeDetails = ({ selectedRecipe, setSelectedRecipe }) => {
               <h2 className="text-2xl font-bold">{selectedRecipe.strMeal}</h2>
               <button className="modal-close text-3xl" onClick={handleClose}>&times;</button>
             </div>
-            <Image
-  src={selectedRecipe.strMealThumb}
-  alt={selectedRecipe.strMeal}
-  width={500} // Example width, adjust as needed
-  height={300} // Example height, adjust as needed
-/>
+            <img
+              src={selectedRecipe.strMealThumb}
+              alt={selectedRecipe.strMeal}
+              className="w-full h-auto"
+            />
             <div className="py-2 max-h-60 overflow-y-auto">{/* Adjust max height as needed */}
               <p>{selectedRecipe.strInstructions}</p>
             </div>

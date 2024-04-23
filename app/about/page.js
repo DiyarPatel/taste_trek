@@ -1,6 +1,4 @@
-
-//import Header from "./components/header";
-
+import Header from "../components/header";
 const AboutPage = () => {
   return (
     <div>

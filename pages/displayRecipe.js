@@ -1,7 +1,8 @@
 
+
 "use client";
-import Image from "next/image";
 // pages/recipe/[id].js
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -39,8 +40,7 @@ const RecipeDetails = () => {
   return (
     <div>
       <h1>{recipe.strMeal}</h1>
-      <Image src={recipe.strMealThumb} alt={recipe.strMeal}  className="w-auto h-auto"
-/>
+      <Image src={recipe.strMealThumb} alt={recipe.strMeal} />
       <p>{recipe.strInstructions}</p>
       {/* Display other recipe details here */}
     </div>

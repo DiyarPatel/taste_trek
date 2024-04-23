@@ -85,7 +85,7 @@ const Home = () => {
               />
             ))
           ) : (
-            <p className="Text text-3xl">No recipes found.</p>
+            <p className="Text 3xl">No recipes found.</p>
           )}
         </section>
       </main>
