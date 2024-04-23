@@ -67,9 +67,9 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-gray-100 min-h-screen flex flex-col">
       <Header />
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 flex-1">
         <SearchBar handleSearch={handleSearch} />
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {loading ? (
@@ -89,6 +89,12 @@ const Home = () => {
           )}
         </section>
       </main>
+      <footer className="bg-gray-300 py-4 text-center">
+        <div className="text-black">Contact Us: mistryAndPatel@gmail.com</div>
+        <div className="text-black">
+          &copy; 2024 Your Website Name. All rights reserved.
+        </div>
+      </footer>
       <RecipeDetails
         selectedRecipe={selectedRecipe}
         setSelectedRecipe={setSelectedRecipe}

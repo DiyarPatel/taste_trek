@@ -10,7 +10,7 @@ const Header = () => {
         <Link href="/">
           <Image src="/logo.png" alt="TasteTrek Logo" width={40} height={40} />
         </Link>
-        <h1 className="text-xl font-bold ml-2">TasteTrek</h1>
+        <h1 className="text-xl font-bold ml-2 text-black">TasteTrek</h1>
       </div>
       {/* Navigation */}
       <nav>
