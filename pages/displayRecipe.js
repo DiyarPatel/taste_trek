@@ -1,5 +1,4 @@
 
-
 "use client";
 // pages/recipe/[id].js
 import Image from "next/image";
@@ -40,9 +39,9 @@ const RecipeDetails = () => {
   return (
     <div>
       <h1>{recipe.strMeal}</h1>
-      <Image src={recipe.strMealThumb} alt={recipe.strMeal} />
+      <Image src={recipe.strMealThumb} alt={recipe.strMeal} width={200} 
+              height={300} />
       <p>{recipe.strInstructions}</p>
-      {/* Display other recipe details here */}
     </div>
   );
 };

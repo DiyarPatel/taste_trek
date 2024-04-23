@@ -11,8 +11,8 @@ const RecipeCard = ({ recipe, handleRecipeClick }) => {
           src={recipe.strMealThumb}
           alt={recipe.strMeal}
           layout="fill"
-          objectFit="cover"
-        />
+          objectFit="cover" >
+          </Image>
       </div>
       <div className="p-4">
         <h3 className="text-xl font-semibold">{recipe.strMeal}</h3>

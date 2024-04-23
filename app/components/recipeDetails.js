@@ -6,6 +6,11 @@ const RecipeDetails = ({ selectedRecipe, setSelectedRecipe }) => {
     setSelectedRecipe(null);
   };
 
+  // Handle click events on the modal content to prevent propagation
+  const handleContentClick = (e) => {
+    e.stopPropagation(); // Stop event propagation
+  };
+
   useEffect(() => {
     if (selectedRecipe) {
       // Prevent scrolling on the background page when modal is open
@@ -26,7 +31,7 @@ const RecipeDetails = ({ selectedRecipe, setSelectedRecipe }) => {
       <div className="modal-overlay bg-black opacity-10 absolute inset-0" onClick={handleClose}></div>
       <div className="modal-container flex items-center justify-center h-full overflow-y-auto">
         {selectedRecipe && (
-          <div className="modal-content bg-white rounded-lg p-8 max-w-md w-full">
+          <div className="modal-content bg-white rounded-lg p-8 max-w-md w-full" onClick={handleContentClick}>
             <div className="flex justify-between items-center pb-3">
               <h2 className="text-2xl font-bold">{selectedRecipe.strMeal}</h2>
               <button className="modal-close text-3xl" onClick={handleClose}>&times;</button>
@@ -38,7 +43,7 @@ const RecipeDetails = ({ selectedRecipe, setSelectedRecipe }) => {
               height={300} // Set the height according to your design requirements
               className="w-full h-auto"
             />
-            <div className="py-2 h-60 overflow-y-auto "> {/* Apply overflow-y-auto directly to the container */}
+            <div className="py-2 overflow-y-auto max-h-60"> {/* Apply overflow-y-auto to enable scrolling */}
               <p>{selectedRecipe.strInstructions}</p>
             </div>
             <div className="flex justify-center">

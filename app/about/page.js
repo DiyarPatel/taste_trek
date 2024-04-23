@@ -1,4 +1,5 @@
 import Header from "../components/header";
+
 const AboutPage = () => {
   return (
     <div>
@@ -6,19 +7,19 @@ const AboutPage = () => {
       <div className="bg-gray-100 min-h-screen">
         <div className="container mx-auto px-4 py-8 color-white">
           <h1 className="text-3xl font-bold mb-4 text-black">About Us</h1>
-          <p className="text-lg mb-4  text-black">
+          <p className="text-lg mb-4 text-black">
             Welcome to our website! We are a team of passionate food enthusiasts
             dedicated to exploring and sharing delicious recipes from around the
             world. Our mission is to inspire people to discover new flavors and
             culinary experiences.
           </p>
-          <p className="text-lg mb-4  text-black">
+          <p className="text-lg mb-4 text-black">
             On this website, you&apos;ll find a wide range of recipes, from
             traditional dishes to modern creations. Whether you&apos;re a seasoned
             chef or just starting out in the kitchen, there&apos;s something here for
             everyone.
           </p>
-          <p className="text-lg mb-8  text-black">
+          <p className="text-lg mb-8 text-black">
             Join us on a culinary journey and let&apos;s explore the wonderful world
             of food together!
           </p>
@@ -30,4 +31,3 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-//hey
