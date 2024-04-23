@@ -39,7 +39,8 @@ const RecipeDetails = () => {
   return (
     <div>
       <h1>{recipe.strMeal}</h1>
-      <Image src={recipe.strMealThumb} alt={recipe.strMeal} />
+      <Image src={recipe.strMealThumb} alt={recipe.strMeal}  className="w-auto h-auto"
+/>
       <p>{recipe.strInstructions}</p>
       {/* Display other recipe details here */}
     </div>

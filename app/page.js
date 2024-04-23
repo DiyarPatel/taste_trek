@@ -1,5 +1,5 @@
 import Home from "./components/home";
-//import AboutPage from "./components/About";
+import page from "./about/page";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -24,7 +24,7 @@ const Page = () => {
               </a>
             </li>
             <li>
-              <a href="#" className="text-gray-600 hover:text-gray-900">
+              <a href="/about/page.js" className="text-gray-600 hover:text-gray-900">
                 About
               </a>
             </li>
