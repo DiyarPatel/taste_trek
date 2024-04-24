@@ -51,12 +51,11 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex flex-col">
+    <div className="flex flex-col min-h-screen">
       <Header />
-      {/* Main content */}
-      <main className="container mx-auto px-4 py-8">
+      <main className="flex-1">
         {/* Title */}
-        <div className="text-center mb-8">
+        <div className="container mx-auto px-4 py-8 text-center">
           <h2 className="text-3xl font-bold color: to-black">
             Discover Delicious Food Adventures
           </h2>
@@ -66,26 +65,31 @@ const Home = () => {
         </div>
 
         {/* Search Bar */}
-        <SearchBar handleSearch={handleSearch} />
+        <div className="container mx-auto px-4 py-4">
+          <h3 className="text-xl font-bold mb-4">Search Recipes</h3>
+          <SearchBar handleSearch={handleSearch} />
+        </div>
 
-        {/* Recipe Cards */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {loading ? (
-            <p>Loading...</p>
-          ) : recipes.length ? (
-            recipes.map((recipe) => (
-              <RecipeCard
-                key={recipe.idMeal}
-                recipe={recipe}
-                handleRecipeClick={handleRecipeClick}
-              />
-            ))
-          ) : (
-            <p className="Text 3xl">No recipes found.</p>
-          )}
+        {/* Featured Recipes */}
+        <section className="container mx-auto px-4 py-8">
+          <h3 className="text-xl font-bold mb-4">Featured Recipes</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {loading ? (
+              <p>Loading...</p>
+            ) : recipes.length ? (
+              recipes.map((recipe) => (
+                <RecipeCard
+                  key={recipe.idMeal}
+                  recipe={recipe}
+                  handleRecipeClick={handleRecipeClick}
+                />
+              ))
+            ) : (
+              <p className="text-center text-3xl">No recipes found.</p>
+            )}
+          </div>
         </section>
       </main>
-      {/* Footer */}
       <footer className="bg-gray-800 text-white text-center py-4">
         <div className="container mx-auto px-4">
           <p className="text-gray-400">
